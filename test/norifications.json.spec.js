@@ -16,7 +16,7 @@ describe('notification.json', () => {
     });
     it('check timestamp uniqueness', () => {
         const timestamps = {};
-        json.notifications.length.forEach(({ timestamp }) => {
+        json.notifications.forEach(({ timestamp }) => {
             if (timestamps[timestamp]) {
                 return fail(`Timestamp: ${timestamp} has duplication!`);
             } else {
