@@ -1,21 +1,29 @@
-name: "Release"
-
-on:
-  push:
-    branches: [ latest ]
+name: "Main workflow"
+on: [push]
 
 jobs:
-  release:
-    name: Release
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Install node
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Install deps
       - run: npm i
+      - name: Run tests
       - run: npm test
+  release:
+    needs:
+      - Test
+    if: github.branch == 'latest'
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
