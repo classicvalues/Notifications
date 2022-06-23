@@ -4,7 +4,7 @@ const schema = Joi.object({
     notifications: Joi.array().items(Joi.object({
         title: Joi.string().required(),
         body: Joi.string().required(),
-        timestamp: Joi.string().required(),
+        timestamp: Joi.number().integer().required(),
     })).required(),
 }).strict(true).required();
 
