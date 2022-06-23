@@ -17,10 +17,10 @@ jobs:
       - name: Run tests
         run: npm test
   release:
+    name: Release
     needs:
       - Test
-    if: github.branch == 'latest'
-    name: Release
+    if: github.ref_name == 'latest'
     runs-on: ubuntu-latest
     steps:
       - name: Release
