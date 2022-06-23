@@ -1,14 +1,3 @@
 {
-  "notifications": [
-    {
-      "title": "Title-1",
-      "body": "Body-1",
-      "timestamp": 1234567
-    },
-    {
-      "title": "Title-2",
-      "body": "Body-2",
-      "timestamp": 1234567
-    }
-  ]
+  "notifications": []
 }
