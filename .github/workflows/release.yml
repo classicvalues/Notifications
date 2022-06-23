@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run:
+          npm i
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
