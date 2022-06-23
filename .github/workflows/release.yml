@@ -9,13 +9,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install node
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Install deps
-      - run: npm i
+        run: npm i
       - name: Run tests
-      - run: npm test
+        run: npm test
   release:
     needs:
       - Test
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release
-      - uses: marvinpinto/action-automatic-releases@latest
+        uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
