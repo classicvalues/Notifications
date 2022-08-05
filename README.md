@@ -95,7 +95,8 @@ To add new notification, add a new object inside the `notifications` array (thou
 }
 ```
 
-After making all the changes, merge the updated `notifications.json` into the `latest` branch. RedisInsight checks new notifications on the application start-up or each 1 hour (at '00) if the application is not closed. When changes are captured, RedisInsight will display the notification.
+When all the changes are made, merge the updated `notifications.json` into the `main` branch. After double-checking the changes in the `main` branch, merge them to the `latest` bracnch.
+RedisInsight checks new notifications from the `latest` branch on the application start-up or each 1 hour (at '00) if the application is not closed. When changes are captured, RedisInsight will display the notification.
 
 
 ![New Notification](docs/new_notification.png)
