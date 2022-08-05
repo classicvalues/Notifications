@@ -1,14 +1,14 @@
 ## Notifications
 ![Notification Center](docs/notification_center.png)
 
-In-app notifications used to notify users about internal events inside RedisInsight app (TBD) and major events related to a Redis company
+In-app notifications allow to inform users about any updates, news or events inside of RedisInsight.
 
 This repository used to manage "global" notifications which are distributed to all RedisInsight app users
 
 ## Structure
 
-All notifications are stored inside `notifications.json` in the root of a repository
-To manage notifications it is enough to edit this json file
+All notifications are stored inside the `notifications.json` in the root of the repository.
+To manage notifications it is enough to edit this json file.
 
 ### notifications.json example
 ```json
@@ -33,8 +33,8 @@ To manage notifications it is enough to edit this json file
 }
 ```
 
-Each notification is an object under `notifications` array field of the json
-with a such structure
+Each notification is an object under the `notifications` array field of the json
+with the following structure.
 
 | Prop | Type | Description |
 | --- | --- | --- |
@@ -44,15 +44,15 @@ with a such structure
 
 **timestamp** and **type** ("global" in our case) will be used as an id
 in the RedisInsight database, so it is very important to keep them unique and not change
-unless you understand why you do it. Also, **timestamp** used to represent notification
-date in the list and for sorting. So it is better to rely on current or
-planned notification release date and convert it to timestamp using,
-for example this [tool](https://www.epochconverter.com/)
+unless you understand why you do that. Also, the **timestamp** is used to represent the notification
+date in the list and for sorting. So it is better to rely on the current or
+planned notification release date and convert it to the timestamp using,
+for example, this [tool](https://www.epochconverter.com/)
 
 ## How to manage notifications
 ### How to add
 
-Let's assume that you have 2 notifications inside a `notifications.json`
+Let's assume that there are 2 notifications inside of the `notifications.json`
 ```json
 {
     "notifications": [
@@ -75,8 +75,8 @@ Let's assume that you have 2 notifications inside a `notifications.json`
 ```
 ![Notification Center](docs/2_notifications_list.png)
 
-To add new notification we just need to add new object inside `notifications` array
-at any position since RedisInsight will sort them anyway.
+To add new notification, add a new object inside the `notifications` array (though it can be added at any position since RedisInsight will sort notifications by the timestamp, please insert a new notification to the top to easily navigate through the file).
+
 ```json
 {
     "notifications": [
@@ -102,27 +102,22 @@ at any position since RedisInsight will sort them anyway.
     ]
 }
 ```
-However, it is better to use any comfortable order or "rules" to make manage process
-more comfortable.
 
-After marge into `latest` branch and RedisInsight sync with `notifications.json`
-you will see it as a toast message in the left corner of RedisInsight app.
+When all the changes are made, merge the updated `notifications.json` into the `main` branch. After double-checking the changes in the `main` branch, merge them to the `latest` branch.
+RedisInsight checks new notifications from the `latest` branch on the application start-up or each 1 hour (at '00) if the application is not closed. When changes are captured, RedisInsight will display the notification.
+
 
 ![New Notification](docs/new_notification.png)
 
 ### How to edit
-We've added a possibility for editing existed notifications (just in case of a typo)
+If there is any information that should be changed in the notifications already published (e.g. a typo), change the information in the `notifications.json` and merge it to the latest branch. RedisInsight will capture the updates according to standard rules and display them in the Notification Center.
 
-You can change anything inside any notification (!except **timestamp** field) and all
-changes will be applied after next sync !**silently** (without notifying user about any changes)
+If the **timestamp** has not been changed, then the notification will be updated silently, if it has been changed then the previous notification will be deleted and a new one will be posted (with the same rules as applied for new notifications).
 
-In case if you changed **timestamp** it will be treated like a
-**deletion of old notification and adding a new one**, so user will be notified about it
-in the same way like for a new notification
+
 
 ### How to delete
-Just delete notification from the `notifications` array and after sync with RedisInsight
-this notification will be **silently** removed from the Notification Center
+If a notification should be deleted, then just delete the notification from the `notifications.json` and merge it to the latest branch. After capturing the changes, RedisInsight will silently remove the notification from the Notification Center.
 
 ## Notifications auto update and dev process
 
