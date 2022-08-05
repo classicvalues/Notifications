@@ -59,11 +59,15 @@ Let's assume that you have 2 notifications inside a `notifications.json`
         {
             "title": "Plain notification",
             "body": "Plain text here",
+            "category": "Release",
+            "categoryColor": "#ffffff",
             "timestamp": 1656374400
         },
         {
             "title": "Html notification",
             "body": "<ul><li>FIRST unnumerated</li><li>Second unnumerated</li><li>Third unnumerated</li><li>Fourth unnumerated</li></ul>",
+            "category": "Release",
+            "categoryColor": "#ffffff",
             "timestamp": 1656460800
         }
     ]
@@ -79,11 +83,15 @@ at any position since RedisInsight will sort them anyway.
         {
             "title": "Plain notification",
             "body": "Plain text here",
+            "category": "Release",
+            "categoryColor": "#ffffff",
             "timestamp": 1656374400
         },
         {
             "title": "Html notification",
             "body": "<ul><li>FIRST unnumerated</li><li>Second unnumerated</li><li>Third unnumerated</li><li>Fourth unnumerated</li></ul>",
+            "category": "Release",
+            "categoryColor": "#ffffff",
             "timestamp": 1656460800
         },
 +        {
