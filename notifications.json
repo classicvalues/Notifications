@@ -1,8 +1,8 @@
 {
   "notifications": [
           {
-            "title": "Have an idea or a bug?",
-            "body": "Would you like to see specific features added or have a bug to report? <p> <a href="https://github.com/RedisInsight/RedisInsight">Share</a> it with us! <p> And star a repository to support the project!",
+            "title": "Have a feature or a bug?",
+            "body": "Would you like to see specific features added or have a bug to report? <p> <a href="https://github.com/RedisInsight/RedisInsight">Share</a> it with us! <p> And star the repository if you like RedisInsight!",
             "category": "feedback",
             "categoryColor": "#330D80",
             "timestamp": 1661961600
