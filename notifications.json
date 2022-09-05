@@ -2,10 +2,10 @@
   "notifications": [
           {
             "title": "Missing a feature or found a bug?",
-            "body": "Would you like to see specific features added or have a bug to report? <p> <a href=\"https://github.com/RedisInsight/RedisInsight/issues\">Share</a> it with us! <p> And star the repository if you like RedisInsight!",
+            "body": "Would you like to see specific features added or have a bug to report? <p> <a href=\"https://github.com/RedisInsight/RedisInsight/issues\">Share</a> it with us! <p> And **star** the repository if you like RedisInsight!",
             "category": "feedback",
             "categoryColor": "#330D80",
-            "timestamp": 1661961600
+            "timestamp": 1662381434
         }
   ]
 }
